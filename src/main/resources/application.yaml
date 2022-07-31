@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spr
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+default:
+  limit:
+    orders-per-client: 5 # Ограничение на количество записей в день на человека
+    orders-per-hour: 5 # Ограничение на количество записей в час
+  schedule:
+    value: 1 # Schedule ID для графика работы вне праздников
